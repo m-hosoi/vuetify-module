@@ -23,7 +23,7 @@ const vuetifyModule: Module<Options> = function (moduleOptions) {
 
     if (typeof options.defaultAssets === 'object') {
       options.defaultAssets.font && setupFont.call(this, options.defaultAssets.font)
-      options.defaultAssets.icons && setupIcons.call(this, options.defaultAssets.icons)
+      options.defaultAssets.icons && !options.defaultAssets.isIconsSelfHost && setupIcons.call(this, options.defaultAssets.icons)
     }
 
     setupSass.call(this, options.customVariables)
